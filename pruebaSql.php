@@ -83,8 +83,11 @@ mysqli_close($conn);
 
 
 //c)Reporte 3
-$sql = "SELECT P.CC, P.Nombre, E.Institucion, E.Fecha FROM persona P INNER JOIN estudios E ON P.CC = E.CC1
-        where max(E.Fecha)";
+
+$sql = "SELECT P.CC, P.Nombre, E.Institucion, E.Fecha 
+FROM persona P 
+INNER JOIN estudios E ON P.CC = E.CC1
+where max(E.Fecha)";
 
 $result = mysqli_query($conn, $sql);
 
